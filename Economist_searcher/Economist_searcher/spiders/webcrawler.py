@@ -1,7 +1,10 @@
 import scrapy
 
 ## text file open
-my_file = open("/Users/dylanedwards/PycharmProjects/Newspaper_Scraper/textfile.txt")
+import os
+path = os.getcwd()
+path = path + "/textfile.txt"
+my_file = open(path)
 
 all_the_lines = my_file.readlines()
 
@@ -55,6 +58,7 @@ class EconomistSpider(scrapy.Spider):
 
         entries = []
         duplicate_entries = []
+        found_duplicates = []
 
         with open('output.csv', 'r') as my_file:
             for line in my_file:
@@ -69,7 +73,8 @@ class EconomistSpider(scrapy.Spider):
                 with open('output.csv', 'r') as my_file:
                     for line in my_file:
                         columns = line.strip().split(',')
-                        if columns[1] in duplicate_entries:
+                        if (columns[1] in duplicate_entries):
+                            found_duplicates.append(columns[1])
                             print line.strip()
                             out_file.write(line)
        # else:

@@ -12,3 +12,8 @@ new_items = [x[:-1] for x in items]
 print(new_items)
 
 
+import os
+path = os.getcwd()
+path = path + "/textfile.txt"
+
+print path
