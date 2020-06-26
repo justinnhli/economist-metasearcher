@@ -10,3 +10,5 @@ The settings to alter the outputs of the spider are avaliable in the CrawlerProc
 The function Duplicates() goes into the Output file and creates a new dile based upon articles that appear more than once across the search.
 
 IndividualSearches() is used to create a file containing the ranked results for each searh term
+
+Hello
